@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.alexandre.concrete.domain.Usuario;
 import br.com.alexandre.concrete.exception.EmailExistException;
-import br.com.alexandre.concrete.exception.IdUserNotFoundException;
+import br.com.alexandre.concrete.exception.UserNotFoundException;
 import br.com.alexandre.concrete.repositories.TelefoneRepository;
 import br.com.alexandre.concrete.repositories.UsuarioRepository;
 
@@ -65,7 +65,7 @@ public class UsuarioService {
 	
 	public Usuario findById(Integer id) {
 		Optional<Usuario> user = userRepository.findById(id);
-		return user.orElseThrow(() -> new IdUserNotFoundException());
+		return user.orElseThrow(() -> new UserNotFoundException());
 	}
 
 	public Usuario findByEmail(String email) {

@@ -25,10 +25,10 @@ obs.: irá retornar nos headers o token no atributo Authorization que no meu caso
 
  3. Via Post  deveremos configurar no nosso header o token que retornou na requisição anterior, que no caso do Postman fica no Hearders devendo setar o atributo Authorization aonde está escrito new key  e em value o token gerado "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmUuamoucmVpc0BnbWFpbC5jb20iLCJleHAiOjE1MjczODg0MzF9.zTjJmXCnkQSnwGTEGnhgPEMJUhiFXQJEyKV0K1AssuY1nIt_RCJYSRtQ_1cUYu_Z7E8vcyUR4xibDKXYIowtQA"
 
-	https://alexandrereis.herokuapp.com/home
+	https://alexandrereis.herokuapp.com/final
 
- 4.Se tudo ocorrer da maneira que esperamos deverar apacerecer uma mensagem.
-'Se voce conseguiu acessar, logo então está autenticado e ocorreu tudo certo! 'Que a força esteja conosco!'
+ 4.Se tudo ocorrer da maneira que esperamos deverar apacerecer um link.
+
 
 
 Observação Geral: Lembrando que também possuímos os métodos de editar, listar por id e remover  todos estão mapeados, caso passe de 30 minutos de utilização do mesmo token, ele irá expirar assim tendo que gerar outro, pois não irar permitir acessar a pagina home.

@@ -19,13 +19,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter  {
  @Autowired
  private CustomAuthenticationProvider customAuthenticationProvider;
 
+ private static final String [] PUBLIC_MATCHERS = {"/favicon.ico/**","/user/**","/h2-console","/h2-console/**"};
+ private static final String [] PUBLIC_MATCHERS_POST = {"/login"};
+ 
  @Override
  protected void configure(HttpSecurity httpSecurity) throws Exception {
 	 
 	 httpSecurity.csrf().disable().authorizeRequests()
-	                .antMatchers("/user/**").permitAll()
-	                .antMatchers("/favicon.ico/**").permitAll()
-	                .antMatchers(HttpMethod.POST, "/login").permitAll()
+	                .antMatchers(PUBLIC_MATCHERS).permitAll()
+	                .antMatchers(HttpMethod.POST, PUBLIC_MATCHERS_POST).permitAll()
 	                .anyRequest().authenticated()
 	                .and()
 	                .addFilterBefore(new JWTLoginFilter("/login", authenticationManager()),
