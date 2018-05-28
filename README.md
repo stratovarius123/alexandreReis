@@ -31,4 +31,4 @@ obs.: irá retornar nos headers o token no atributo Authorization que no meu caso
 
 
 
-Observação Geral: Lembrando que também possuímos os métodos de editar, listar por id e remover  todos estão mapeados, caso passe de 30 minutos de utilização do mesmo token, ele irá expirar assim tendo que gerar outro, pois não irar permitir acessar a pagina home.
+Observação Geral: Lembrando que também possuímos os métodos de editar, listar por id e remover, todos estão mapeados. Caso passe de 30 minutos de utilização do mesmo token, ele irá expirar assim tendo que gerar outro, pois não irar permitir acessar a pagina home.
