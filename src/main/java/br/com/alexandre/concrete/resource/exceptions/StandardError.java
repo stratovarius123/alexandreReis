@@ -1,4 +1,4 @@
-package br.com.alexandre.concrete.service.exceptions;
+package br.com.alexandre.concrete.resource.exceptions;
 
 import java.io.Serializable;
 

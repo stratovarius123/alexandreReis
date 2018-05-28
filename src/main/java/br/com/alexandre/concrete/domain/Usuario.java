@@ -15,7 +15,6 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-
 @Entity
 public class Usuario implements Serializable {
 	

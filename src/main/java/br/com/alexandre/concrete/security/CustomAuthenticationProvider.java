@@ -26,6 +26,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider{
 		if (user != null) {
 
 			String password = (String) authentication.getCredentials();
+			
 			if (!new BCryptPasswordEncoder().matches(password, user.getPassword())) {
 				throw new BadCredentialsException("Senha invalida!");
 			}

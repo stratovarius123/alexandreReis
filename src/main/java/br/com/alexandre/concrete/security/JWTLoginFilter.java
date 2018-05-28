@@ -20,8 +20,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
 import br.com.alexandre.concrete.domain.Usuario;
+import br.com.alexandre.concrete.resource.exceptions.AuthenticationError;
 import br.com.alexandre.concrete.security.service.TokenAuthenticationService;
-import br.com.alexandre.concrete.service.exceptions.AuthenticationError;
 
 public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter{
 
@@ -44,9 +44,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter{
     }
 
     @Override
-    protected void unsuccessfulAuthentication(  HttpServletRequest request,
-                                                HttpServletResponse response,
-                                                AuthenticationException exception) throws IOException, ServletException {
+    protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
         this.onAuthenticationFailure(response, exception);
     }
 

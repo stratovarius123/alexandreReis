@@ -28,8 +28,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	runtime('com.h2database:h2')
 	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.0'
 	compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
+	runtime('com.h2database:h2')
 	testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
 }

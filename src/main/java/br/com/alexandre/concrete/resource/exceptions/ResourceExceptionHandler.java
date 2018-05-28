@@ -1,4 +1,4 @@
-package br.com.alexandre.concrete.service.exceptions;
+package br.com.alexandre.concrete.resource.exceptions;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import br.com.alexandre.concrete.exception.EmailExistException;
-import br.com.alexandre.concrete.exception.UserNotFoundException;
 import br.com.alexandre.concrete.exception.LoginInvalidException;
+import br.com.alexandre.concrete.exception.UserNotFoundException;
+import io.jsonwebtoken.SignatureException;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
@@ -27,7 +28,13 @@ public class ResourceExceptionHandler {
 	}
 	
 	@ExceptionHandler(LoginInvalidException.class)
-	public ResponseEntity<StandardError> handlerUserNotFoundException(LoginInvalidException e, HttpServletRequest request) {
+	public ResponseEntity<StandardError> handlerLoginInvalidException(LoginInvalidException e, HttpServletRequest request) {
+		StandardError standardError =  new StandardError(HttpStatus.UNAUTHORIZED.value(), "Não Autorizado", System.currentTimeMillis());
+		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(standardError);
+	}
+	
+	@ExceptionHandler(SignatureException.class)
+	public ResponseEntity<StandardError> handlerSignatureException(SignatureException e, HttpServletRequest request) {
 		StandardError standardError =  new StandardError(HttpStatus.UNAUTHORIZED.value(), "Não Autorizado", System.currentTimeMillis());
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(standardError);
 	}
